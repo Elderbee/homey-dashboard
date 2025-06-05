@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eredivisie Uitslagen - FcTables Widget</title>
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            max-width: 340px;
+            height: 440px; /* aangepast aan de iframe */
+        }
+        .credit {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+            text-align: center;
+        }
+        .credit a {
+            color: #3bafda;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <iframe 
+        scrolling="no"
+        src="https://www.fctables.com/netherlands/eredivisie/iframe/?type=league-scores&lang_id=24&country=155&template=19&team=185345&timezone=Europe/Amsterdam&time=24&width=320&height=440&font=Arial&fs=10&lh=16&bg=FFFFFF&fc=333333&tlink=0&scoreb=f4454f&scorefc=FFFFFF&sgdcoreb=8f8d8d&sgdcorefc=FFFFFF&sh=1&hfb=1&hbc=3bafda&hfc=FFFFFF">
+    </iframe>
+
+    <div class="credit">
+        <a href="https://www.fctables.com/netherlands/eredivisie/" rel="nofollow" target="_blank">Bron: FcTables.com</a>
+    </div>
+
+</body>
+</html>
