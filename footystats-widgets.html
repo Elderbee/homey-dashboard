@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <title>FootyStats Widgets</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 10px;
+    }
+    .widget-container {
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="widget-container">
+    <div id="fs-upcoming-367"></div>
+    <script>
+      (function (w,d,s,o,f,js,fjs) {
+        w['fsUpcomingEmbed']=o;
+        w[o] = w[o] || function () {
+          (w[o].q = w[o].q || []).push(arguments)
+        };
+        js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+        js.id = o; js.src = f; js.async = 1;
+        fjs.parentNode.insertBefore(js, fjs);
+      }(window, document, 'script', 'fsUpcoming', 'https://cdn.footystats.org/embeds/upcoming-loc.js'));
+      fsUpcoming('params', { teamID: 367, lang: 'nl', containerID: 'fs-upcoming-367' });
+    </script>
+  </div>
+
+  <div class="widget-container">
+    <div id="fs-upcoming-374"></div>
+    <script>
+      fsUpcoming('params', { teamID: 374, lang: 'nl', containerID: 'fs-upcoming-374' });
+    </script>
+  </div>
+
+  <div class="widget-container">
+    <div id="fs-upcoming-371"></div>
+    <script>
+      fsUpcoming('params', { teamID: 371, lang: 'nl', containerID: 'fs-upcoming-371' });
+    </script>
+  </div>
+</body>
+</html>
