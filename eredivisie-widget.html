@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eredivisie Stand - FcTables Widget</title>
+    <title>Eredivisie Stand & Uitslagen - FcTables Widgets</title>
     <style>
         body {
             font-family: Verdana, sans-serif;
@@ -11,22 +11,28 @@
             margin: 0;
             padding: 20px;
             display: flex;
-            justify-content: center;
-            align-items: center;
             flex-direction: column;
+            align-items: center;
         }
+
+        .widget-container {
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 340px;
+        }
+
         iframe {
             border: none;
             width: 100%;
-            max-width: 340px; /* pas dit aan naar wens */
-            height: 600px;
         }
+
         .credit {
-            margin-top: 10px;
             font-size: 14px;
             color: #555;
             text-align: center;
+            margin-top: 8px;
         }
+
         .credit a {
             color: #3bafda;
             text-decoration: none;
@@ -35,13 +41,28 @@
 </head>
 <body>
 
-    <iframe 
-        scrolling="yes"
-        src="https://www.fctables.com/netherlands/eredivisie/iframe/?type=table&lang_id=24&country=155&template=19&team=&timezone=Europe/Athens&time=24&po=1&ma=1&wi=1&dr=1&los=1&gf=1&ga=1&gd=1&pts=1&ng=1&form=1&width=340&height=600&font=Verdana&fs=12&lh=22&bg=FFFFFF&fc=333333&tlink=1&ths=1&thb=1&thba=FFFFFF&thc=000000&bc=dddddd&hob=f5f5f5&hobc=ebe7e7&lc=333333&sh=1&hfb=1&hbc=3bafda&hfc=FFFFFF">
-    </iframe>
+    <!-- Eredivisie Stand -->
+    <div class="widget-container">
+        <iframe 
+            height="400"
+            scrolling="no"
+            src="https://www.fctables.com/netherlands/eredivisie/iframe/?type=table&lang_id=24&country=155&template=19&team=185345&timezone=Europe/Amsterdam&time=24&po=1&ma=1&wi=1&dr=1&los=1&gf=0&ga=0&gd=1&pts=1&ng=0&form=0&width=320&height=400&font=Arial&fs=10&lh=16&bg=FFFFFF&fc=333333&tlink=0&ths=1&thb=1&thba=FFFFFF&thc=000000&bc=dddddd&hob=f5f5f5&hobc=ebe7e7&lc=333333&sh=1&hfb=1&hbc=3bafda&hfc=FFFFFF">
+        </iframe>
+        <div class="credit">
+            <a href="https://www.fctables.com/netherlands/eredivisie/" rel="nofollow" target="_blank">Bron: FcTables.com</a>
+        </div>
+    </div>
 
-    <div class="credit">
-        <a href="https://www.fctables.com/netherlands/eredivisie/" rel="nofollow" target="_blank">Bron: FcTables.com</a>
+    <!-- Eredivisie Uitslagen -->
+    <div class="widget-container">
+        <iframe 
+            height="440"
+            scrolling="no"
+            src="https://www.fctables.com/netherlands/eredivisie/iframe/?type=league-scores&lang_id=24&country=155&template=19&team=185345&timezone=Europe/Amsterdam&time=24&width=320&height=440&font=Arial&fs=10&lh=16&bg=FFFFFF&fc=333333&tlink=0&scoreb=f4454f&scorefc=FFFFFF&sgdcoreb=8f8d8d&sgdcorefc=FFFFFF&sh=1&hfb=1&hbc=3bafda&hfc=FFFFFF">
+        </iframe>
+        <div class="credit">
+            <a href="https://www.fctables.com/netherlands/eredivisie/" rel="nofollow" target="_blank">Bron: FcTables.com</a>
+        </div>
     </div>
 
 </body>
