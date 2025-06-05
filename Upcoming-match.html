@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Voetbalwedstrijden en standen via FootyStats voor Team 367.">
-  <title>Voetbalstatistieken - Team 367</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eredivisie Stand</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
+      background-color: #f4f4f4;
       padding: 20px;
       font-size: 14px;
       color: #333;
@@ -17,33 +16,80 @@
       font-size: 20px;
       margin-bottom: 15px;
     }
-    .widget-container {
-      margin-bottom: 50px;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      font-size: 14px;
+    }
+    th {
+      background-color: #efefef;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
     }
   </style>
 </head>
 <body>
-  <h1>Stand Eredivisie</h1>
-  <div class="widget-container" id="fs-standings"></div>
+  <h1>Eredivisie Stand</h1>
+  <table id="standings-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Team</th>
+        <th>Gespeeld</th>
+        <th>W</th>
+        <th>G</th>
+        <th>V</th>
+        <th>Punten</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
 
   <script>
-    function loadWidget() {
-      mw('params', { leagueID: 12890 }); // pas aan naar juiste ID indien nodig
+    async function fetchEredivisieStand() {
+      const response = await fetch('https://api.football-data.org/v4/competitions/ED/standings', {
+        headers: {
+          'X-Auth-Token': '63c1e386aa00445a899aa8eb1028bfd2'
+        }
+      });
+
+      if (!response.ok) {
+        console.error("API fout:", response.statusText);
+        document.querySelector("#standings-table tbody").innerHTML = "<tr><td colspan='7'>Kon data niet laden</td></tr>";
+        return;
+      }
+
+      const data = await response.json();
+      const table = data.standings[0].table;
+
+      const tbody = document.querySelector("#standings-table tbody");
+      tbody.innerHTML = '';
+
+      table.forEach(team => {
+        const row = `
+          <tr>
+            <td>${team.position}</td>
+            <td>${team.team.name}</td>
+            <td>${team.playedGames}</td>
+            <td>${team.won}</td>
+            <td>${team.draw}</td>
+            <td>${team.lost}</td>
+            <td>${team.points}</td>
+          </tr>
+        `;
+        tbody.insertAdjacentHTML('beforeend', row);
+      });
     }
 
-    (function (w,d,s,o,f,js,fjs) {
-      w['fsStandingsEmbed'] = o;
-      w[o] = w[o] || function () {
-        (w[o].q = w[o].q || []).push(arguments);
-      };
-      js = d.createElement(s);
-      fjs = d.getElementsByTagName(s)[0];
-      js.id = o;
-      js.src = f;
-      js.async = true;
-      js.onload = loadWidget;
-      fjs.parentNode.insertBefore(js, fjs);
-    }(window, document, 'script', 'mw', 'https://cdn.footystats.org/embeds/standings.js'));
+    fetchEredivisieStand();
   </script>
 </body>
 </html>
