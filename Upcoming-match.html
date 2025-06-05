@@ -2,12 +2,20 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <title>FootyStats Widget - Team 367</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Voetbalwedstrijden en standen via FootyStats voor Team 367.">
+  <title>Voetbalstatistieken - Team 367</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #f9f9f9;
       padding: 20px;
+      font-size: 14px;
+      color: #333;
+    }
+    h1 {
+      font-size: 20px;
+      margin-bottom: 15px;
     }
     .widget-container {
       margin-bottom: 50px;
@@ -15,28 +23,27 @@
   </style>
 </head>
 <body>
-  <h1>Voetbalwedstrijden - Team 367</h1>
-
-  <div class="widget-container" id="fs-upcoming-367"></div>
+  <h1>Stand Eredivisie</h1>
+  <div class="widget-container" id="fs-standings"></div>
 
   <script>
     function loadWidget() {
-      fsUpcoming('params', { teamID: 367, lang: 'nl', containerID: 'fs-upcoming-367' });
+      mw('params', { leagueID: 12322 }); // pas aan naar juiste ID indien nodig
     }
 
     (function (w,d,s,o,f,js,fjs) {
-      w['fsUpcomingEmbed']=o;
+      w['fsStandingsEmbed'] = o;
       w[o] = w[o] || function () {
-        (w[o].q = w[o].q || []).push(arguments)
+        (w[o].q = w[o].q || []).push(arguments);
       };
       js = d.createElement(s);
       fjs = d.getElementsByTagName(s)[0];
       js.id = o;
       js.src = f;
-      js.async = 1;
+      js.async = true;
       js.onload = loadWidget;
       fjs.parentNode.insertBefore(js, fjs);
-    }(window, document, 'script', 'fsUpcoming', 'https://cdn.footystats.org/embeds/upcoming-loc.js'));
+    }(window, document, 'script', 'mw', 'https://cdn.footystats.org/embeds/standings.js'));
   </script>
 </body>
 </html>
