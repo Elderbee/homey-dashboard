@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TradingView Widgets</title>
+  <style>
+    .widget-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr;
+      max-width: 100%;
+      padding: 10px;
+    }
+
+    @media (min-width: 768px) {
+      .widget-grid {
+        grid-template-columns: 1fr 1fr; /* naast elkaar op tablets/desktops */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="widget-grid">
+    <!-- 1D Widget -->
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <div class="tradingview-widget-copyright">
+        <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
+          <span class="blue-text">Track all markets on TradingView</span>
+        </a>
+      </div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+      {
+        "symbol": "BITGET:BTCEUR",
+        "width": "100%",
+        "height": "200",
+        "locale": "en",
+        "dateRange": "1D",
+        "colorTheme": "dark",
+        "isTransparent": false,
+        "autosize": true,
+        "largeChartUrl": ""
+      }
+      </script>
+    </div>
+
+    <!-- 1M Widget -->
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <div class="tradingview-widget-copyright">
+        <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
+          <span class="blue-text">Track all markets on TradingView</span>
+        </a>
+      </div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+      {
+        "symbol": "BITGET:BTCEUR",
+        "width": "100%",
+        "height": "200",
+        "locale": "en",
+        "dateRange": "1M",
+        "colorTheme": "dark",
+        "isTransparent": false,
+        "autosize": true,
+        "largeChartUrl": ""
+      }
+      </script>
+    </div>
+  </div>
+</body>
+</html>
