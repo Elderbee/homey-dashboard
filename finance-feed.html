@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TradingView Widget</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- TradingView Widget BEGIN -->
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright">
+      <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
+        <span class="blue-text">Track all markets on TradingView</span>
+      </a>
+    </div>
+    <script type="text/javascript" async src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js">
+    {
+      "feedMode": "all_symbols",
+      "isTransparent": false,
+      "displayMode": "compact",
+      "width": 400,
+      "height": 550,
+      "colorTheme": "dark",
+      "locale": "en"
+    }
+    </script>
+  </div>
+  <!-- TradingView Widget END -->
+</body>
+</html>
