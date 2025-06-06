@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Crypto Overview</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Crypto Overview Widget</title>
   <style>
-    body {
+    html, body {
       margin: 0;
-      background-color: #121212;
-      color: #ffffff;
-      font-family: -apple-system, BlinkMacSystemFont, "Trebuchet MS", Roboto, Ubuntu, sans-serif;
+      padding: 0;
+      height: 100%;
+      background-color: #111;
     }
     .tradingview-widget-container {
-      padding: 20px;
-      box-sizing: border-box;
+      width: 100vw;
+      height: 100vh;
     }
   </style>
 </head>
@@ -29,9 +28,9 @@
     <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
     {
       "symbols": [
-        [ "BITVAVO:BTCEUR|1M" ],
-        [ "BITVAVO:ETHEUR|1M" ],
-        [ "BITVAVO:XRPEUR|1M" ]
+        ["BITVAVO:BTCEUR|1M"],
+        ["BITVAVO:ETHEUR|1M"],
+        ["BITVAVO:XRPEUR|1M"]
       ],
       "chartOnly": false,
       "width": "100%",
