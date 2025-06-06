@@ -3,18 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <title>Technical Analysis BTC/EUR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
       background-color: #111;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      height: 100%;
+    }
+
+    .tradingview-widget-container {
+      width: 300px;
+      height: 300px;
+      margin: 0 auto; /* centreert horizontaal */
     }
   </style>
 </head>
 <body>
   <!-- TradingView Widget BEGIN -->
-  <div class="tradingview-widget
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright">
+      <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
+        <span class="blue-text">Track all markets on TradingView</span>
+      </a>
+    </div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+    {
+      "interval": "1W",
+      "width": "300",
+      "isTransparent": false,
+      "height": "300",
+      "symbol": "BITVAVO:BTCEUR",
+      "showIntervalTabs": true,
+      "displayMode": "single",
+      "locale": "en",
+      "colorTheme": "dark"
+    }
+    </script>
+  </div>
+  <!-- TradingView Widget END -->
+</body>
+</html>
