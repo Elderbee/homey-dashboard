@@ -12,52 +12,36 @@
       height: 100%;
     }
 
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      box-sizing: border-box;
-      padding: 20px;
-    }
-
     .tradingview-widget-container {
       width: 300px;
       height: 300px;
-    }
-
-    @media (max-height: 320px) {
-      .container {
-        align-items: flex-start;
-      }
+      margin: 0 auto; /* centreert horizontaal */
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- TradingView Widget BEGIN -->
-    <div class="tradingview-widget-container">
-      <div class="tradingview-widget-container__widget"></div>
-      <div class="tradingview-widget-copyright">
-        <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
-          <span class="blue-text">Track all markets on TradingView</span>
-        </a>
-      </div>
-      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
-      {
-        "interval": "1W",
-        "width": "300",
-        "isTransparent": false,
-        "height": "300",
-        "symbol": "XETR:SXR8",
-        "showIntervalTabs": true,
-        "displayMode": "single",
-        "locale": "en",
-        "colorTheme": "dark"
-      }
-      </script>
+  <!-- TradingView Widget BEGIN -->
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright">
+      <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
+        <span class="blue-text">Track all markets on TradingView</span>
+      </a>
     </div>
-    <!-- TradingView Widget END -->
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+    {
+      "interval": "1W",
+      "width": "300",
+      "isTransparent": false,
+      "height": "300",
+      "symbol": "XETR:SXR8",
+      "showIntervalTabs": true,
+      "displayMode": "single",
+      "locale": "en",
+      "colorTheme": "dark"
+    }
+    </script>
   </div>
+  <!-- TradingView Widget END -->
 </body>
 </html>
