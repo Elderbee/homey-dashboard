@@ -2,70 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>TradingView Widgets</title>
+  <title>Crypto Overview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    .widget-grid {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: 1fr;
-      max-width: 100%;
-      padding: 10px;
+    body {
+      margin: 0;
+      background-color: #121212;
+      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "Trebuchet MS", Roboto, Ubuntu, sans-serif;
     }
-
-    @media (min-width: 768px) {
-      .widget-grid {
-        grid-template-columns: 1fr 1fr; /* naast elkaar op tablets/desktops */
-      }
+    .tradingview-widget-container {
+      padding: 20px;
+      box-sizing: border-box;
     }
   </style>
 </head>
 <body>
-  <div class="widget-grid">
-    <!-- 1D Widget -->
-    <div class="tradingview-widget-container">
-      <div class="tradingview-widget-container__widget"></div>
-      <div class="tradingview-widget-copyright">
-        <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
-          <span class="blue-text">Track all markets on TradingView</span>
-        </a>
-      </div>
-      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-      {
-        "symbol": "BITGET:BTCEUR",
-        "width": "100%",
-        "height": "200",
-        "locale": "en",
-        "dateRange": "1D",
-        "colorTheme": "dark",
-        "isTransparent": false,
-        "autosize": true,
-        "largeChartUrl": ""
-      }
-      </script>
+  <!-- TradingView Widget BEGIN -->
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright">
+      <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
+        <span class="blue-text">Track all markets on TradingView</span>
+      </a>
     </div>
-
-    <!-- 1M Widget -->
-    <div class="tradingview-widget-container">
-      <div class="tradingview-widget-container__widget"></div>
-      <div class="tradingview-widget-copyright">
-        <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
-          <span class="blue-text">Track all markets on TradingView</span>
-        </a>
-      </div>
-      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-      {
-        "symbol": "BITGET:BTCEUR",
-        "width": "100%",
-        "height": "200",
-        "locale": "en",
-        "dateRange": "1M",
-        "colorTheme": "dark",
-        "isTransparent": false,
-        "autosize": true,
-        "largeChartUrl": ""
-      }
-      </script>
-    </div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
+    {
+      "symbols": [
+        [ "BITVAVO:BTCEUR|1M" ],
+        [ "BITVAVO:ETHEUR|1M" ],
+        [ "BITVAVO:XRPEUR|1M" ]
+      ],
+      "chartOnly": false,
+      "width": "100%",
+      "height": "100%",
+      "locale": "en",
+      "colorTheme": "dark",
+      "autosize": true,
+      "showVolume": false,
+      "showMA": false,
+      "hideDateRanges": false,
+      "hideMarketStatus": false,
+      "hideSymbolLogo": false,
+      "scalePosition": "right",
+      "scaleMode": "Normal",
+      "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
+      "fontSize": "10",
+      "noTimeScale": false,
+      "valuesTracking": "1",
+      "changeMode": "price-and-percent",
+      "chartType": "area",
+      "maLineColor": "#2962FF",
+      "maLineWidth": 1,
+      "maLength": 9,
+      "headerFontSize": "medium",
+      "lineWidth": 2,
+      "lineType": 0,
+      "dateRanges": [
+        "1d|1",
+        "1m|30",
+        "3m|60",
+        "12m|1D",
+        "60m|1W",
+        "all|1M"
+      ]
+    }
+    </script>
   </div>
+  <!-- TradingView Widget END -->
 </body>
 </html>
